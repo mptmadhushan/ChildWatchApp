@@ -14,6 +14,7 @@ import VoiceScreen from '../screens/Voice';
 import Pointing from '../screens/Pointing';
 import Game from '../screens/Game';
 import VideoEmotion from '../screens/VideoEmotion';
+import PronounceList from '../screens/PronounceList';
 import EmotionReport from '../screens/EmotionReport';
 // import  from '../screens/ForgotPassword';
 import TestChart from '../screens/chart';
@@ -82,7 +83,7 @@ function MainStackNavigator() {
           component={HandWrite}
         />
         <Stack.Screen
-          name="Voice"
+          name="VoiceScreen"
           options={{headerShown: false}}
           component={VoiceScreen}
         />
@@ -105,6 +106,11 @@ function MainStackNavigator() {
           name="VideoEmotion"
           options={{headerShown: false}}
           component={VideoEmotion}
+        />        
+        <Stack.Screen
+          name="PronounceList"
+          options={{headerShown: false}}
+          component={PronounceList}
         />
       </Stack.Navigator>
     </NavigationContainer>

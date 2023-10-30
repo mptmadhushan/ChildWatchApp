@@ -61,12 +61,12 @@ export default function Home({navigation}) {
         </View>
         <View style={styles.rowNorm}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('voice')}
+            onPress={() => navigation.navigate('PronounceList')}
             style={styles.slide1}>
             <View style={styles.centerFlex}>
             <Icon name="microphone-alt" size={40} color={COLORS.primary} />
            
-              <Text style={styles.text001}>Pronounce</Text>
+              <Text style={styles.text001}>PronounceList</Text>
             </View>
           </TouchableOpacity>
          

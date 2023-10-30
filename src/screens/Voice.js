@@ -32,6 +32,7 @@ const VoiceScreen = ({navigation}) => {
   const [error, setError] = useState('');
   const [isValid, setValid] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState('');
 
   const storeData = async value => {
     console.log(value);
@@ -43,6 +44,15 @@ const VoiceScreen = ({navigation}) => {
     } catch (e) {
       // saving error
     }
+  };
+  const handle =() => {
+    setTimeout(function () {
+      if(!result){
+      setResult('Correct');
+      }else{
+      setResult('Wrong');
+      }
+    }, 5000);
   };
   const onPressLogin = () => {
     navigation.navigate('Home');
@@ -72,7 +82,7 @@ const VoiceScreen = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.mainBody}
-      source={require('../assets/icons/loginback.png')}>
+      source={require('../assets/bgchild.jpg')}>
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
@@ -93,7 +103,7 @@ const VoiceScreen = ({navigation}) => {
                 }}
                 source={require('../assets/icons/voc.png')}
               />
-           <Text style={styles.title}>Hi, I’M Voxie</Text>
+           <Text style={styles.title}>{result}</Text>
           </View>
          
 
@@ -103,8 +113,14 @@ const VoiceScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.buttonStyle}
               activeOpacity={0.5}
+              onPress={() => handle()}>
+              <Text style={styles.buttonTextStyle}>Press to start</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonStyle}
+              activeOpacity={0.5}
               onPress={() => onPressLogin()}>
-              <Text style={styles.buttonTextStyle}>Ask Me</Text>
+              <Text style={styles.buttonTextStyle}>Home</Text>
             </TouchableOpacity>
             {/* <Button
               title="Google Sign-In"
