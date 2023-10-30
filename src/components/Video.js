@@ -34,7 +34,8 @@ const LocalVideoPlayer = ({videoPath,navigation}) => {
           style={styles.video}
           controls={true}
         />
-      )}  {videoPath === 'Neutral' && (
+      )}
+      {videoPath === 'Neutral' && (
         <Video
           source={require(`../assets/Neutral.mp4`)}
           style={styles.video}
